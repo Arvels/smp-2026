@@ -3,7 +3,7 @@
   "version": "1.10",
   "language": "uk",
   "enabled": true,
-  "daily_goal": 15,
+  "daily_goal": 20,
   "lesson_duration_minutes": 20,
   "passing_score": 0.8,
   "notifications_enabled": true,
