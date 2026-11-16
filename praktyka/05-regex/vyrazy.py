@@ -37,4 +37,4 @@ VYRAZY = {
 }
 
 # Посилання на один ваш збережений вираз на regex101 (кнопка Save):
-# regex101:
+# regex101: https://regex101.com/?regex=%5E%28%3F%3A%5B01%5D%5B0-9%5D%7C2%5B0-3%5D%29%3A%5B0-5%5D%5B0-9%5D%24&testString=00%3A00%0A09%3A05%0A23%3A59%0A24%3A00%0A23%3A60%0A9%3A05&flags=m&flavor=python&delimiter=%22
