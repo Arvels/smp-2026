@@ -79,7 +79,7 @@ smp-2026/
 
 ### Модуль 2
 
-- [ ] `praktyka/09-mini-movy` — міні-мови всередині Python
+- [x] `praktyka/09-mini-movy` — міні-мови всередині Python
 - [ ] `praktyka/10-maket` — форма трьома менеджерами розташування
 - [ ] `praktyka/11-podii` — застосунок із подіями
 - [ ] `praktyka/12-process` — формалізація бізнес-процесу
