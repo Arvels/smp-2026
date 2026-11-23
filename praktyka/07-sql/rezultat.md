@@ -1,0 +1,84 @@
+# Результат: цикл проти SQL-запиту
+
+## Вивід `python praktyka/07-sql/perevir.py`
+
+```text
+
+== 1. Треки, довші за 5 хвилин: назва, тривалість у секундах; від найдовшого
+     Name | Seconds
+     Occupation / Precipice | 5286.953
+     Through a Looking Glass | 5088.838
+     Greetings from Earth, Pt. 1 | 2960.293
+     … ще 1066
+  ✅ правильно (рядків: 1069)
+
+== 2. Виконавці на A, за абеткою
+     Name
+     A Cor Do Som
+     AC/DC
+     Aaron Copland & London Symphony Orchestra
+     … ще 23
+  ✅ правильно (рядків: 26)
+
+== 3. Сім найдорожчих рахунків: номер, дата, країна, сума; від найбільшої
+     InvoiceId | InvoiceDate | BillingCountry | Total
+     404 | 2025-11-13 00:00:00 | Czech Republic | 25.86
+     299 | 2024-08-05 00:00:00 | USA | 23.86
+     96 | 2022-02-18 00:00:00 | Hungary | 21.86
+     … ще 4
+  ✅ правильно (рядків: 7)
+
+== 4. Клієнти з Польщі або Чехії: імʼя, прізвище, країна
+     FirstName | LastName | Country
+     František | Wichterlová | Czech Republic
+     Helena | Holý | Czech Republic
+     Stanisław | Wójcik | Poland
+  ✅ правильно (рядків: 3)
+
+== 5. Приватні клієнти з Канади (Company порожнє): імʼя, прізвище, місто
+     FirstName | LastName | City
+     François | Tremblay | Montréal
+     Robert | Brown | Toronto
+     Edward | Francis | Ottawa
+     … ще 3
+  ✅ правильно (рядків: 6)
+
+== 6. Країни клієнтів без повторів, за абеткою
+     Country
+     Argentina
+     Australia
+     Austria
+     … ще 21
+  ✅ правильно (рядків: 24)
+
+== 7. Альбоми зі словом Live у назві
+     Title
+     Alcohol Fueled Brewtality Live! [Disc 1]
+     Alcohol Fueled Brewtality Live! [Disc 2]
+     Acústico MTV [Live]
+     … ще 14
+  ✅ правильно (рядків: 17)
+
+== 8. Рахунки за березень 2025: номер, дата, країна, сума; за датою
+     InvoiceId | InvoiceDate | BillingCountry | Total
+     345 | 2025-03-01 00:00:00 | Germany | 3.96
+     346 | 2025-03-02 00:00:00 | France | 5.94
+     347 | 2025-03-05 00:00:00 | Italy | 8.91
+     … ще 4
+  ✅ правильно (рядків: 7)
+
+Разом: 8 з 8 пунктів ✅   (мінімум для зарахування — пункти 1–5)
+```
+
+## Вивід `python praktyka/07-sql/tsykl.py`
+
+```text
+Усього клієнтів: 59
+Helena Holý Czech Republic
+František Wichterlová Czech Republic
+Stanisław Wójcik Poland
+```
+
+## Висновок
+
+У циклі Python спочатку завантажуються всі 59 клієнтів, після чого я сам перевіряю країну кожного запису, додаю потрібні рядки до списку й сортую їх за прізвищем. В SQL для цієї задачі достатньо одного запиту з умовою WHERE Country IN ('Poland', 'Czech Republic') і сортуванням ORDER BY LastName. Якби клієнтів було 5 мільйонів, читання всіх записів у Python зайняло б значно більше пам’яті й створило б зайвий обсяг передавання даних. У SQL фільтрацію та сортування виконує сама база даних, тому застосунок отримує лише три потрібні записи.
