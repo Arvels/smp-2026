@@ -15,6 +15,9 @@ def main():
     zhurnal = Path(__file__).resolve().parents[2] / 'data' / 'access.log'
     ip_counter = Counter()
     kod_counter = Counter()
+    shliakh_404 = Counter()
+    vidviduvachi_404 = {}
+    shliakh_5xx = Counter()
     pomylky_5xx = []
     rozibrano = 0
     propushcheno = 0
@@ -31,6 +34,10 @@ def main():
             kod_counter[zbih['kod']] += 1
             if zbih['kod'].startswith('5'):
                 pomylky_5xx.append((zbih['chas'], zbih['shliakh']))
+                shliakh_5xx[zbih['shliakh']] += 1
+            if zbih['kod'] == '404':
+                shliakh_404[zbih['shliakh']] += 1
+                vidviduvachi_404.setdefault(zbih['shliakh'], Counter())[zbih['ip']] += 1
 
     print(f'Розібрано: {rozibrano}, пропущено: {propushcheno}')
 
@@ -45,6 +52,16 @@ def main():
     print(f'\nПомилки 5xx ({len(pomylky_5xx)} запити):')
     for chas, shliakh in pomylky_5xx:
         print(f'  {chas}  {shliakh}')
+
+    print('\nПомилки 5xx за шляхами:')
+    for shliakh, kilkist in shliakh_5xx.most_common():
+        print(f'  {shliakh}: {kilkist}')
+
+    print('\nПомилки 404 за шляхами та IP-адресами:')
+    for shliakh, kilkist in shliakh_404.most_common():
+        print(f'  {shliakh}: {kilkist}')
+        for ip, zapyty in vidviduvachi_404[shliakh].most_common():
+            print(f'    {ip}: {zapyty}')
 
 
 if __name__ == '__main__':
