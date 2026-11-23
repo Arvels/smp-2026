@@ -72,7 +72,7 @@ smp-2026/
 - [x] `praktyka/03-rozmitka` — README і семантичний HTML
 - [x] `praktyka/04-konfihuratsiya` — одна конфігурація трьома мовами
 - [x] `praktyka/05-regex` — регулярні вирази: пошук
-- [ ] `praktyka/06-regex-log` — розбір журналу сервера
+- [x] `praktyka/06-regex-log` — розбір журналу сервера
 - [ ] `praktyka/07-sql` — запити до бази
 - [ ] `praktyka/08-sql-join` — обʼєднання таблиць і агрегація
 - [ ] `modul-1/` — **есе або міні-проєкт із захистом**
