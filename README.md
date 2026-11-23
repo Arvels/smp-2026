@@ -81,7 +81,7 @@ smp-2026/
 
 - [x] `praktyka/09-mini-movy` — міні-мови всередині Python
 - [x] `praktyka/10-maket` — форма трьома менеджерами розташування
-- [ ] `praktyka/11-podii` — застосунок із подіями
+- [x] `praktyka/11-podii` — застосунок із подіями
 - [ ] `praktyka/12-process` — формалізація бізнес-процесу
 - [ ] `praktyka/13-hra` — проста гра
 - [ ] `praktyka/14-mini-proekt` — міні-проєкт однією предметною мовою
